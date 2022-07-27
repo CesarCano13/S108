@@ -1,4 +1,4 @@
-package n1exercici1;
+package n1exercici2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,23 +15,24 @@ public class Main {
 		nombres.add("Delfin");
 		nombres.add("Hormiga");
 		nombres.add("Gallina");
+		nombres.add("Mono");
 
 		filtrar(nombres);
 	}
 
 	public static void filtrar(ArrayList<String> nombres) {
 		// Versión lambdas
-		List<String> letrasO = nombres.stream().filter(name -> name.contains("o")).collect(Collectors.toList());
-		System.out.println("Los animales que tienen la letra O son: " + letrasO);
-
+		List<String> letrasO = nombres.stream().filter(name -> name.contains("o") && name.length() > 5).collect(Collectors.toList());
+		System.out.println("Los animales que tienen la letra O y tiene más de 5 carácteres son: " + letrasO);
+				
 		// Versión normal
 		/*ArrayList<String> letrasO = new ArrayList<String>();
 		for (String o : nombres) {
-			if (o.contains("o")) {
+			if (o.contains("o") && o.length() > 5) {
 				letrasO.add(o);
 			}
 		}
-		System.out.println("Los animales que tienen la letra O son: " + letrasO);*/
+		System.out.println("Los animales que tienen la letra O y tiene más de 5 carácteres son: " + letrasO);*/
 
 	}
 }
